@@ -1,0 +1,14 @@
+<%= link_to "New Company", new_company_path %>
+<h2>Company List</h2>
+<% @companies.each do |company| %>
+  <div class="row">
+    <p>
+    </p>
+      <%= link_to company.name, edit_company_path(company[:id]) %>
+      <%= "        "  %>
+      <%= link_to "Delete this company", company_path(company[:id]), method: :delete %>
+  </div>
+    <p>
+    </p>
+  _____________________________________________________
+<% end %>

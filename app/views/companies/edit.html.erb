@@ -1,0 +1,29 @@
+<%= link_to " Back to Companies", companies_path %>
+<p>
+
+</p>
+<%= form_for @company do |t| %>
+
+<%= t.label :name, "Company Name" %>
+<%= t.text_field :name %>
+<%= t.submit %>
+
+<% end %>
+<p></p>
+
+<%= form_for [@company, @event] do |t| %>
+<%= t.label :name, "Event Name" %>
+<%= t.text_field :name %>
+<%= t.submit %>
+
+<% end %>
+<h2>List of Events</h2>
+<p></p>
+
+  <% @event_all.each do |event| %>
+    <p></p>
+
+  <%= link_to event.name, edit_company_event_path(@company[:id], event[:id]) %>
+    <p></p>
+
+<% end %>

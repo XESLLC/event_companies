@@ -1,0 +1,12 @@
+<%= link_to " Back to Companies", companies_path %>
+<p>
+
+</p>
+
+<%= form_for [@company, @event] do |t| %>
+
+<%= t.label :name, "Edit Event Name" %>
+<%= t.text_field :name %>
+<%= t.submit %>
+
+<% end %>
